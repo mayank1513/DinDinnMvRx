@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="pizza"
+            type="chaudhari.mayank.dindinn.data.Pizza" />
+
+        <variable
+            name="handler"
+            type="chaudhari.mayank.dindinn.views.MainFragmentHandler" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:background="#1D2C69"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:onClick="@{() -> handler.onPizzaClicked(pizza)}"
+        app:cardCornerRadius="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="16dp">
+
+            <chaudhari.mayank.dindinn.views.WebImageView
+                android:id="@+id/image"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="1.33"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:url="@{pizza.imageUrl}"
+                tools:background="#ff777777" />
+
+            <TextView
+                android:id="@+id/titleView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@{pizza.title}"
+                android:textColor="#ff222222"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/image"
+                tools:text="Great Pizza" />
+
+            <TextView
+                android:id="@+id/detailsView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@{pizza.subTitle}"
+                android:textColor="#aaaa"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/titleView"
+                app:layout_constraintTop_toBottomOf="@id/titleView" />
+
+            <TextView
+                android:id="@+id/weightAndRadiusView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text='@{Integer.toString(pizza.weight) + " grams, " + Integer.toString(pizza.radius) + " cm"}'
+                android:textColor="#aaaa"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@id/detailsView"
+                app:layout_constraintTop_toTopOf="@+id/button" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@{pizza.quantity == 0 ? @drawable/btn : @drawable/btn1}"
+                android:onClick="@{() -> handler.onBuyBtnClicked(pizza)}"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text='@{pizza.quantity == 0 ? pizza.price + " usd": "added + " + pizza.quantity}'
+                android:textColor="@android:color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/detailsView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
