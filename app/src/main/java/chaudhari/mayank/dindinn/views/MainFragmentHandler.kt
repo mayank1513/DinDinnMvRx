@@ -1,9 +1,9 @@
 package chaudhari.mayank.dindinn.views
 
-import chaudhari.mayank.dindinn.data.Pizza
+import chaudhari.mayank.dindinn.data.Item
 
 interface MainFragmentHandler {
-    fun onPizzaClicked(pizza: Pizza)
-    fun onBuyBtnClicked(pizza: Pizza)
+    fun onPizzaClicked(pizza: Item)
+    fun onBuyBtnClicked(pizza: Item)
     fun onCartClicked()
 }

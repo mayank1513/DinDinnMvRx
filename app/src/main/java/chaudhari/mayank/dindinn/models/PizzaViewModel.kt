@@ -4,16 +4,18 @@ import chaudhari.mayank.dindinn.MyApplication
 import chaudhari.mayank.dindinn.PizzaState
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.airbnb.mvrx.ViewModelContext
-import chaudhari.mayank.dindinn.data.PizzaRepository
+import chaudhari.mayank.dindinn.data.HotelRepository
 import chaudhari.mayank.dindinn.utils.MvRxViewModel
 
 class PizzaViewModel(
     initialState: PizzaState,
-    private val pizzaRepository: PizzaRepository
+    private val hotelRepository: HotelRepository
 ) : MvRxViewModel<PizzaState>(initialState) {
 
     init {
-        pizzaRepository.getpizzas().execute { copy(pizzas = it) }
+        hotelRepository.getpizzas().execute { copy(pizzas = it) }
+        hotelRepository.gettikkis().execute { copy(tikkis = it) }
+        hotelRepository.getdrinks().execute { copy(drinks = it) }
     }
 
     companion object : MavericksViewModelFactory<PizzaViewModel, PizzaState> {

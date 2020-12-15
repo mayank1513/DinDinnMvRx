@@ -7,14 +7,15 @@
 
         <variable
             name="pizza"
-            type="chaudhari.mayank.dindinn.data.Pizza" />
+            type="chaudhari.mayank.dindinn.data.Item" />
 
         <variable
             name="handler"
-            type="chaudhari.mayank.dindinn.views.MainFragmentHandler" />
+            type="chaudhari.mayank.dindinn.views.PizzaItemHandler" />
     </data>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/card_margin"
@@ -81,11 +82,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:background="@{pizza.quantity[0] == 0 ? @drawable/btn : @drawable/btn1}"
-                android:onClick="@{() -> handler.onBuyBtnClicked(pizza)}"
+                android:background="@drawable/btn"
+                android:onClick="@{() -> handler.onBuyBtnClicked(pizza, button)}"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text='@{pizza.quantity[0] == 0 ? pizza.price + " usd": "added + " + pizza.quantity[0]}'
+                android:text='@{pizza.price + " usd"}'
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detailsView" />

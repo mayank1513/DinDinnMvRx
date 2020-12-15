@@ -1,6 +1,6 @@
 package chaudhari.mayank.dindinn.data
 
-data class Pizza(
+data class Item(
     val id: Long,
     val title: String,
     val subTitle: String,
@@ -16,7 +16,7 @@ data class Pizza(
         if (this === other) return true
         if (javaClass != other?.javaClass) return false
 
-        other as Pizza
+        other as Item
 
         if (id != other.id) return false
         if (stableId != other.stableId) return false

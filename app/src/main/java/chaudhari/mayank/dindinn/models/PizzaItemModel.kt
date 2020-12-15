@@ -2,9 +2,9 @@ package chaudhari.mayank.dindinn.models
 
 import android.view.View
 import chaudhari.mayank.dindinn.R
-import chaudhari.mayank.dindinn.data.Pizza
+import chaudhari.mayank.dindinn.data.Item
 import chaudhari.mayank.dindinn.databinding.PizzaRowBinding
-import chaudhari.mayank.dindinn.views.MainFragmentHandler
+import chaudhari.mayank.dindinn.views.PizzaItemHandler
 import com.airbnb.epoxy.EpoxyAttribute
 import com.airbnb.epoxy.EpoxyHolder
 import com.airbnb.epoxy.EpoxyModelClass
@@ -14,9 +14,9 @@ import com.airbnb.epoxy.EpoxyModelWithHolder
 abstract class PizzaItemModel : EpoxyModelWithHolder<PizzaItemModel.Holder>() {
 
     @EpoxyAttribute
-    lateinit var pizza: Pizza
+    lateinit var pizza: Item
     @EpoxyAttribute
-    lateinit var handler: MainFragmentHandler
+    lateinit var handler: PizzaItemHandler
 
     override fun bind(holder: Holder) {
         super.bind(holder)

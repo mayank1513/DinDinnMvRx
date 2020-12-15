@@ -7,6 +7,10 @@
         <variable
             name="activeTab"
             type="Integer" />
+
+        <variable
+            name="handler"
+            type="chaudhari.mayank.dindinn.views.TabHeaderHandler" />
     </data>
 
     <LinearLayout
@@ -17,6 +21,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:id="@+id/tabHeaders"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -26,6 +31,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> handler.onTabClicked(0)}"
                 android:text="@string/pizzas"
                 android:textAlignment="center"
                 android:textSize="24sp"
@@ -35,7 +43,10 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/sushi"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> handler.onTabClicked(1)}"
+                android:text="@string/alu_tikki"
                 android:textAlignment="center"
                 android:textSize="24sp" />
 
@@ -43,6 +54,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> handler.onTabClicked(2)}"
                 android:text="@string/drinks"
                 android:textAlignment="center"
                 android:textSize="24sp" />

@@ -7,7 +7,7 @@
 
         <variable
             name="pizza"
-            type="chaudhari.mayank.dindinn.data.Pizza" />
+            type="chaudhari.mayank.dindinn.data.Item" />
 
         <variable
             name="handler"
