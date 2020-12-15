@@ -9,8 +9,24 @@ data class Pizza(
     val price: Int = 45,
     val weight: Int = 200,
     val radius: Int = 35,
-    var quantity: Int = 0,
-    var inCart: Int = 0
+    val quantity: IntArray = intArrayOf(0, 0)
 ) : StableItem {
     override val stableId = id
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Pizza
+
+        if (id != other.id) return false
+        if (stableId != other.stableId) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = id.hashCode()
+        result = 31 * result + stableId.hashCode()
+        return result
+    }
 }

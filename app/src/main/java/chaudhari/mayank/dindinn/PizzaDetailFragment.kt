@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import chaudhari.mayank.dindinn.databinding.PizzaDetailFragmentBinding
+import chaudhari.mayank.dindinn.models.PizzaViewModel
 import chaudhari.mayank.dindinn.views.PizzaDetailFragmentHandler
 import com.airbnb.mvrx.*
 

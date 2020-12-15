@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">DinDinn</string>
     <string name="meet_your_pizza">Time to have some Pizza!</string>
-    <string name="buy_pizza">Buy %1$s!</string>
+    <string name="buy_pizza">Buy</string>
     <string name="adopting_pizzas">Processing…</string>
-    <string name="love_pizza">I love this Pizza!</string>
-    <string name="congratulations">Congratulations,</string>
-    <string name="you_adopted">You have ordered %1$s!</string>
     <string name="cart_button">Cart Button</string>
+    <string name="pizzas">Pizzas</string>
+    <string name="sushi">Sushi</string>
+    <string name="drinks">Drinks</string>
+    <string name="filters">Filters</string>
 </resources>

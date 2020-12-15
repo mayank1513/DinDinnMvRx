@@ -4,7 +4,9 @@ plugins {
     id "kotlin-kapt"
     id "kotlin-android-extensions"
 }
-
+kapt {
+    correctErrorTypes = true
+}
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.1"
@@ -44,6 +46,8 @@ dependencies {
     implementation "com.airbnb.android:mvrx-rxjava2:2.0.0-beta3"
     implementation "androidx.cardview:cardview:1.0.0"
     implementation "com.airbnb.android:epoxy:4.0.0"
+//    implementation "com.airbnb.android:epoxy-databinding:4.0.0"
+    kapt "com.airbnb.android:epoxy-processor:4.0.0"
     implementation "androidx.navigation:navigation-fragment-ktx:2.3.2"
     implementation "androidx.navigation:navigation-ui-ktx:2.3.2"
     implementation "com.squareup.picasso:picasso:2.8"

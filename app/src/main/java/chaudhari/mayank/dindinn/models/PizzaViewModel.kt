@@ -1,10 +1,11 @@
-package chaudhari.mayank.dindinn
+package chaudhari.mayank.dindinn.models
 
+import chaudhari.mayank.dindinn.MyApplication
+import chaudhari.mayank.dindinn.PizzaState
 import com.airbnb.mvrx.MavericksViewModelFactory
 import com.airbnb.mvrx.ViewModelContext
 import chaudhari.mayank.dindinn.data.PizzaRepository
 import chaudhari.mayank.dindinn.utils.MvRxViewModel
-import io.reactivex.schedulers.Schedulers
 
 class PizzaViewModel(
     initialState: PizzaState,

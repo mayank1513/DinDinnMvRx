@@ -16,8 +16,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp">
+        android:layout_height="wrap_content">
 
         <chaudhari.mayank.dindinn.views.WebImageView
             android:id="@+id/image"
@@ -52,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
-            android:text='@{Integer.toString(pizza.inCart) + " x " + Integer.toString(pizza.price) + " usd = " + Integer.toString(pizza.price * pizza.inCart) + " usd"}'
+            android:text='@{Integer.toString(pizza.quantity[1]) + " x " + Integer.toString(pizza.price) + " usd = " + Integer.toString(pizza.price * pizza.quantity[1]) + " usd"}'
             android:textColor="#aaaa"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="@+id/image"

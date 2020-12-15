@@ -91,7 +91,7 @@
             android:background="@drawable/adopt_button_background"
             android:elevation="8dp"
             android:gravity="center"
-            android:text="@string/love_pizza"
+            android:text="@string/buy_pizza"
             android:textSize="16sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

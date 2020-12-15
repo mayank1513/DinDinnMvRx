@@ -17,11 +17,11 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
+        android:layout_margin="@dimen/card_margin"
         android:background="#1D2C69"
         android:foreground="?android:attr/selectableItemBackground"
         android:onClick="@{() -> handler.onPizzaClicked(pizza)}"
-        app:cardCornerRadius="8dp">
+        app:cardCornerRadius="24dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -81,11 +81,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:background="@{pizza.quantity == 0 ? @drawable/btn : @drawable/btn1}"
+                android:background="@{pizza.quantity[0] == 0 ? @drawable/btn : @drawable/btn1}"
                 android:onClick="@{() -> handler.onBuyBtnClicked(pizza)}"
                 android:paddingStart="16dp"
                 android:paddingEnd="16dp"
-                android:text='@{pizza.quantity == 0 ? pizza.price + " usd": "added + " + pizza.quantity}'
+                android:text='@{pizza.quantity[0] == 0 ? pizza.price + " usd": "added + " + pizza.quantity[0]}'
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/detailsView" />
