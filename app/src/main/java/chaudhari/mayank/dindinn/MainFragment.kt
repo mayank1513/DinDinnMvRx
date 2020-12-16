@@ -67,23 +67,10 @@ class MainFragment : Fragment(), MvRxView, MainFragmentHandler, PizzaItemHandler
                     position: Int,
                     direction: Int
                 ) {
-                    if (direction == ItemTouchHelper.LEFT && controller.activeTab != 2) {
-                        onTabClicked(controller.activeTab + 1)
-                    } else if (direction == ItemTouchHelper.RIGHT && controller.activeTab != 0) {
-                        onTabClicked(controller.activeTab - 1)
-                    }
+                    val d = if (direction == ItemTouchHelper.LEFT) 1 else -1
+                    onTabClicked((controller.activeTab + d + 3) % 3)
                     controller.requestModelBuild()
-                    bindings.pizzasRecyclerView.invalidate()
                 }
-//
-//                override fun onSwipeProgressChanged(
-//                    model: PizzaItemModel_?,
-//                    itemView: View?,
-//                    swipeProgress: Float,
-//                    canvas: Canvas?
-//                ) {
-//                    super.onSwipeProgressChanged(model, itemView, swipeProgress, canvas)
-//                }
             })
         return bindings.root
     }
